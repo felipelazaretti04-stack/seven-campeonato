@@ -1,4 +1,5 @@
 <!-- LOVABLE:BEGIN -->
+
 > [!IMPORTANT]
 > This project is connected to [Lovable](https://lovable.dev). Avoid rewriting
 > published git history — force pushing, or rebasing/amending/squashing commits
@@ -27,4 +28,11 @@ use the editor.
   `LOVABLE_API_KEY`. When Lovable does not provide one, users can bring their
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
+
 <!-- LOVABLE:END -->
+
+## Application architecture
+
+- Keep Phase 1 competition fixtures behind the browser-safe `competition` domain module; derive standings and player rankings from completed scores and events to keep mock data consistent and replaceable.
+- Use shared SEVEN presentation components and leaf-route metadata with TanStack file routes; public pages remain SSR-safe and contain no authentication simulation.
+- Define the visual identity in global semantic CSS tokens; use the existing Button component for controls and links that act as commands.
